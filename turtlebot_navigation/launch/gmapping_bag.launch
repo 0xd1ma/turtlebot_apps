@@ -1,0 +1,7 @@
+<launch>
+  <param name="/use_sim_time" value="true"/>
+  <!-- Gmapping -->
+  <arg name="custom_gmapping_launch_file" default="$(find turtlebot_navigation)/launch/includes/gmapping/kinect_hokuyo_gmapping.launch.xml"/>
+  <include file="$(arg custom_gmapping_launch_file)"/>
+
+</launch>

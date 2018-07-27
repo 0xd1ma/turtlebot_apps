@@ -8,7 +8,7 @@
     
     <!-- We must specify an absolute topic name because if not it will be prefixed by "$(arg camera)".
          Probably is a bug in the nodelet manager: https://github.com/ros/nodelet_core/issues/7 --> 
-    <arg name="scan_topic" value="/scan" />
+    <arg name="scan_topic" value="/kinect/scan" />
   </include>
 
   <!-- Map server -->
@@ -17,8 +17,8 @@
 
   <!-- AMCL -->
   <arg name="custom_amcl_launch_file" default="$(find turtlebot_navigation)/launch/includes/amcl/$(arg 3d_sensor)_amcl.launch.xml"/>
-  <arg name="initial_pose_x" default="0.0"/> <!-- Use 17.0 for willow's map in simulation -->
-  <arg name="initial_pose_y" default="0.0"/> <!-- Use 17.0 for willow's map in simulation -->
+  <arg name="initial_pose_x" default="0.0"/> 
+  <arg name="initial_pose_y" default="0.0"/> 
   <arg name="initial_pose_a" default="0.0"/>
   <include file="$(arg custom_amcl_launch_file)">
     <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
